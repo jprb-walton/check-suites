@@ -50,33 +50,111 @@ def main():
 
   # List the suites to be processed.
   suites = [
-  "u-bg469" ,
-  "u-bg567" ,
-  "u-bg568" ,
-  "u-bg569" ,
-  "u-bg570" ,
-  "u-bg467" ,
+
+
+  # hadjr
+  "u-bf772" ,
+
+
+  # ukesm
+  "u-aq281" ,
+  "u-bf467" ,
+  "u-bf590" ,
+  "u-bf785" ,
+  "u-bf786" ,
+
+
+  # rsmith
+  "u-bc590" ,
+  "u-bd729" ,
+  "u-be760" ,
+  "u-bf918" ,
+  "u-bg539" ,
+
+
+
+  # hadgf
+  "u-bf659" ,
+  "u-bg634" ,
+
+
+  # eroberts
+  "u-bd531" ,
+  "u-bd532" ,
+  "u-bd533" ,
+  "u-bf916" ,
+  "u-bf917" ,
+  "u-bf980" ,
+  "u-bf981" ,
+
+
+  # hadsl
+  "u-bc235" ,
+  "u-bc253" ,
+  "u-be909" ,                                            
+  "u-bg510" ,
+
+  
+  # hadaw
+  "u-bf965" ,
+  "u-bf967" ,
+  "u-bf968" ,
+
+  "u-bf938" ,
+
+  "u-bg204" ,
+  "u-bg205" ,
+  "u-bg206" ,
+  "u-bg207" ,
+  "u-bg208" ,
+
+  "u-bg512" ,
+  
+
+  # ukcmip6
+  "u-be372" ,
+
+  "u-bf351" ,
+  "u-bf352" ,
+  "u-bf353" ,
+  "u-bf354" ,
+  
+  "u-bf699" ,
 
   "u-bf741" ,
   "u-bf742" ,
   "u-bf743" ,
   "u-bf744" ,
 
+  "u-bg103" ,
+  
   "u-bg466" ,
   "u-bg468" ,
+  "u-bg467" ,
   "u-bg469" ,
+  "u-bg470" ,
 
-  "u-bf699" ,
+  "u-bg555" ,
+  
+  "u-bg567" ,
+  "u-bg568" ,
+  "u-bg569" ,
+  "u-bg570" ,
+
+  "u-bg572" ,
+  "u-bg573" ,
+  "u-bg574" ,
+
 
   "u-bg586" ,
   "u-bg587" ,
   "u-bg588" ,
   "u-bg589" ,
 
-  "u-bf353" ,
-  "u-bf354" ,
+  "u-bg617" , 
+  "u-bg618" , 
 
-  "u-bg617" 
+
   ]
   
   # Process each one.  Output is formatted for cutting and pasting into 
