@@ -4,7 +4,7 @@ import sys
 
 def main():
 
-  jobs = {
+  title = {
   "u-bg555" : "N96 abrupt4CO2", 
 
   "u-bg567" : "N96 1pctCO2 #1",
@@ -38,12 +38,17 @@ def main():
 
 
   for line in sys.stdin:
+    if ".xcs" not in line:
+      continue
     items = line.split()
-    task = items[3]
+    jobname = items[3]
     nodes = items[5]
-    suite = task.split('.')[2]
+    suite = jobname.split('.')[2]
     
-    print("{0:3d}  {1:>35s}  {2:<50s}").format(int(nodes), task, jobs[suite])
+    if suite in title:    
+      print("{0:3d}  {1:>35s}  {2:<50s}").format(int(nodes), jobname, title[suite])
+    else:
+      print "No title for ", suite
 
 
 if __name__ == '__main__':
