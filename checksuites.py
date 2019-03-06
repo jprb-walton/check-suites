@@ -43,7 +43,7 @@ def main():
     nodes = items[5]
     suite = task.split('.')[2]
     
-    print task, "\n", jobs[suite], nodes
+    print("{0:3d}  {1:>35s}  {2:<50s}").format(int(nodes), task, jobs[suite])
 
 
 if __name__ == '__main__':
