@@ -74,6 +74,7 @@ def main():
   }
 
   nodesTotal = 0
+  print "Nodes             Task                  Queued? Suite title"
   for line in sys.stdin:
     # Emsure that the line contains the details about a job (starts with xxxxxx.xcs00).
     if ".xcs" not in line:
@@ -83,10 +84,16 @@ def main():
     items = line.split()
     nodes = int(items[5])
     jobName = items[3]
+
+    # Extract the jobname (of the form foo.bar.suite).
+    jobName = items[3]
     
     # Extract the suite from the jobname, then get its title.
     suite = jobName.split('.')[2]
     
+    # Extract the queueing indicator.
+    queueLabel = items[9]
+
     if suite in suiteTitles:    
       title = suiteTitles[suite]
     else:
@@ -94,7 +101,7 @@ def main():
       print "No title for ", suite
 
     # Output results for this suite.
-    print("{0:3d}  {1:>35s}  {2:<50s}").format(nodes, jobName, title)
+    print("{0:3d}  {1:>35s}  {2:<2s}    {3:<50s}").format(nodes, jobName, queueLabel, title)
     nodesTotal += nodes
 
   print "Total number of nodes", nodesTotal
