@@ -1,7 +1,8 @@
-# 
+# Find the titles of a set of suites.
 
 import sys
 import subprocess
+
 
 def spawn_command(command):
 
