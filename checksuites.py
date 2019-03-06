@@ -107,7 +107,7 @@ def main():
     print("{0:<8s} {1:3d}  {2:>35s}  {3:<2s}    {4:<50s}").format(user, nodes, jobName, queueLabel, title)
     nodesTotal += nodes
 
-  print "Total number of nodes", nodesTotal
+  print("Total number of nodes {}\n").format(nodesTotal)
 
 
 if __name__ == '__main__':
