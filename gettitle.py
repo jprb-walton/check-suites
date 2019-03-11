@@ -23,16 +23,16 @@ def gettitle(suitename):
 
   # Get the title of the suite.  suitename is the name of the suite in the form u-aa999.
   
-  # This is the orignal form of the command; this doesn't work when spawned - possibly because 
-  # of the quotes in the sed command.
+  # This is the orignal form of the command; this doesn't work when spawned - possibly
+  # because of the quotes in the sed command.
   #
   #svn cat https://code.metoffice.gov.uk/svn/roses-u/b/g/4/6/9/trunk/rose-suite.info | grep title | sed 's/title=//'
    
   # Pull off the id.
   suiteid = suitename.split('-')[1]
   
-  # Build up the command.  We use svn to list the rose-suite.info file for the suite, and
-  # extract the line containing 'title'.
+  # Build up the command.  We use svn to list the rose-suite.info file for the
+  # suite, and extract the line containing 'title'.
   command = "svn cat https://code.metoffice.gov.uk/svn/roses-u/"
   for c in suiteid:
     command = command + c + "/"
@@ -66,11 +66,11 @@ def main():
 
   # rsmith
   "u-bc590" ,
+  "u-bd727" ,
   "u-bd729" ,
   "u-be760" ,
   "u-bf918" ,
   "u-bg539" ,
-
 
 
   # hadgf
@@ -91,10 +91,20 @@ def main():
   # hadsl
   "u-bc235" ,
   "u-bc253" ,
-  "u-be909" ,                                            
+  "u-be909" ,
+  "u-bg017" ,
+  "u-bg246" ,
+  "u-bg258" ,
   "u-bg510" ,
 
+
+  # hadfo
+  "u-bf531" ,
+  "u-bf534" ,
+  "u-bf535" ,
+  "u-bg738" ,
   
+
   # hadaw
   "u-bf965" ,
   "u-bf967" ,
@@ -102,6 +112,7 @@ def main():
 
   "u-bf938" ,
 
+  "u-bg203" ,
   "u-bg204" ,
   "u-bg205" ,
   "u-bg206" ,
@@ -113,6 +124,7 @@ def main():
 
   # ukcmip6
   "u-be372" ,
+  "u-be488" ,
 
   "u-bf351" ,
   "u-bf352" ,
@@ -126,6 +138,7 @@ def main():
   "u-bf743" ,
   "u-bf744" ,
 
+  "u-bg101" ,
   "u-bg103" ,
   
   "u-bg466" ,
