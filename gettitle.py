@@ -19,9 +19,11 @@ def spawn_command(command):
   return proc.communicate()[0]
 
 
-def gettitle(suitename):
+def getparam(suitename, parameter):
 
-  # Get the title of the suite.  suitename is the name of the suite in the form u-aa999.
+  # Get the value of a suite parameter.
+  # suitename is the name of the suite in the form u-aa999.
+  # parameter is an entry in rose-suite.info (e.g. title, owner).
   
   # This is the orignal form of the command; this doesn't work when spawned - possibly
   # because of the quotes in the sed command.
@@ -36,14 +38,15 @@ def gettitle(suitename):
   command = "svn cat https://code.metoffice.gov.uk/svn/roses-u/"
   for c in suiteid:
     command = command + c + "/"
-  command = command + "trunk/rose-suite.info | grep title"
+  command = command + "trunk/rose-suite.info | grep " + parameter
   line = spawn_command(command)
   
-  # line is of the form title=foo.  Pull off the first part.
-  title = line.replace("title=", "")
+  # line is of the form parameter=foo.  Pull off the first part.
+  firstpart = parameter + '='
+  result = line.replace(firstpart, "")
   
   # Return the title, with trailing whitespace (including newline characters) removed.
-  return title.rstrip()
+  return result.rstrip()
 
 
 def main():
@@ -173,8 +176,7 @@ def main():
   # Process each one.  Output is formatted for cutting and pasting into 
   # a dictionary (in e.g. checksuites.py).
   for suite in suites:
-    print "  \"" + suite + "\" : \"" + gettitle(suite) + "\" ,"
-
+    print "  \"" + suite + "\" : [\"" + getparam(suite, "owner") + "\" , \"" + getparam(suite, "title") + "\"] ,"
 
 if __name__ == '__main__':
   main()
