@@ -54,34 +54,8 @@ def main():
   # List the suites to be processed.
   suites = [
 
-
-  # hadjr
-  "u-bf772" ,
-
-
-  # ukesm
-  "u-aq281" ,
-  "u-bf467" ,
-  "u-bf590" ,
-  "u-bf785" ,
-  "u-bf786" ,
-
-
-  # rsmith
-  "u-bc590" ,
-  "u-bd727" ,
-  "u-bd729" ,
-  "u-be760" ,
-  "u-bf918" ,
-  "u-bg539" ,
-
-
-  # hadgf
-  "u-bf659" ,
-  "u-bg634" ,
-
-
   # eroberts
+  "u-bc930" ,
   "u-bd531" ,
   "u-bd532" ,
   "u-bd533" ,
@@ -91,24 +65,8 @@ def main():
   "u-bf981" ,
 
 
-  # hadsl
-  "u-bc235" ,
-  "u-bc253" ,
-  "u-be909" ,
-  "u-bg017" ,
-  "u-bg246" ,
-  "u-bg258" ,
-  "u-bg510" ,
-
-
-  # hadfo
-  "u-bf531" ,
-  "u-bf534" ,
-  "u-bf535" ,
-  "u-bg738" ,
-  
-
   # hadaw
+  "u-bd531" ,
   "u-bf965" ,
   "u-bf967" ,
   "u-bf968" ,
@@ -124,6 +82,40 @@ def main():
 
   "u-bg512" ,
   
+
+  # hadfo
+  "u-bf531" ,
+  "u-bf534" ,
+  "u-bf535" ,
+  "u-bg738" ,
+
+
+  # hadgf
+  "u-bf659" ,
+  "u-bg634" ,
+
+
+  # hadjr
+  "u-bf772" ,
+
+
+  # hadsl
+  "u-bc235" ,
+  "u-bc253" ,
+  "u-be909" ,
+  "u-bg017" ,
+  "u-bg246" ,
+  "u-bg258" ,
+  "u-bg510" ,
+
+  # rsmith
+  "u-bc590" ,
+  "u-bd727" ,
+  "u-bd729" ,
+  "u-be760" ,
+  "u-bf918" ,
+  "u-bg539" ,
+
 
   # ukcmip6
   "u-be372" ,
@@ -169,6 +161,14 @@ def main():
 
   "u-bg617" , 
   "u-bg618" , 
+
+
+  # ukesm
+  "u-aq281" ,
+  "u-bf467" ,
+  "u-bf590" ,
+  "u-bf785" ,
+  "u-bf786" ,
 
 
   ]
