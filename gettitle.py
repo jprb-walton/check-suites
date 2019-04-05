@@ -193,17 +193,17 @@ def main():
 
   ]
   
-  fileName = "suiteParams22.txt"
+  fileName = "suiteParams.txt"
   print fileName, isfile(fileName), access(fileName, R_OK)
   assert isfile(fileName) and access(fileName, R_OK), \
          "File {0} doesn't exist or isn't readable".format(fileName)
 
   suiteParams = json.load(open(fileName, "r"))
 
+  # Suites to add to dictionary.
   suites = ['u-bh443', 'u-bh519']
   
-  # Process each one.  Output is formatted for cutting and pasting into 
-  # a dictionary (in e.g. checksuites.py).
+  # Process each one.  If it's not there, add it.
   for suite in suites:
     if suite not in suiteParams:
       suiteParams[suite] = [getparam(suite, "owner"), getparam(suite, "title")]
