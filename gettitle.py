@@ -4,6 +4,9 @@ import sys
 import subprocess
 import json
 
+from os import access, R_OK
+from os.path import isfile
+
 
 def spawn_command(command):
 
@@ -190,15 +193,22 @@ def main():
 
   ]
   
-  suiteParams = {}
+  fileName = "suiteParams22.txt"
+  print fileName, isfile(fileName), access(fileName, R_OK)
+  assert isfile(fileName) and access(fileName, R_OK), \
+         "File {0} doesn't exist or isn't readable".format(fileName)
+
+  suiteParams = json.load(open(fileName, "r"))
+
+  suites = ['u-bh443', 'u-bh519']
   
   # Process each one.  Output is formatted for cutting and pasting into 
   # a dictionary (in e.g. checksuites.py).
   for suite in suites:
-#    print "  \"" + suite + "\" : [\"" + getparam(suite, "owner") + "\" , \"" + getparam(suite, "title") + "\"] ,"
-    suiteParams[suite] = [getparam(suite, "owner"), getparam(suite, "title")]
+    if suite not in suiteParams:
+      suiteParams[suite] = [getparam(suite, "owner"), getparam(suite, "title")]
 
-  json.dump(suiteParams, open("suiteParams.txt", "w"))
+  json.dump(suiteParams, open("suiteParams2.txt", "w"))
 
 if __name__ == '__main__':
   main()
