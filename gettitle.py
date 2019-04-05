@@ -190,10 +190,15 @@ def main():
 
   ]
   
+  suiteParams = {}
+  
   # Process each one.  Output is formatted for cutting and pasting into 
   # a dictionary (in e.g. checksuites.py).
   for suite in suites:
-    print "  \"" + suite + "\" : [\"" + getparam(suite, "owner") + "\" , \"" + getparam(suite, "title") + "\"] ,"
+#    print "  \"" + suite + "\" : [\"" + getparam(suite, "owner") + "\" , \"" + getparam(suite, "title") + "\"] ,"
+    suiteParams[suite] = [getparam(suite, "owner"), getparam(suite, "title")]
+
+  json.dump(suiteParams, open("suiteParams.txt", "w"))
 
 if __name__ == '__main__':
   main()
