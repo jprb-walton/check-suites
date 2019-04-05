@@ -2,6 +2,7 @@
 
 import sys
 import subprocess
+import json
 
 
 def spawn_command(command):
@@ -170,6 +171,13 @@ def main():
   "u-bh010" ,
   "u-bh109" ,
   "u-bh114" ,
+
+  "u-bh336" ,
+  "u-bh337" ,
+  "u-bh338" ,
+  "u-bh339" ,
+
+  "u-bh432" ,
 
 
   # ukesm
