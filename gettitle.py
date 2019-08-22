@@ -194,21 +194,25 @@ def main():
   ]
   
   fileName = "suiteParams.txt"
-  print fileName, isfile(fileName), access(fileName, R_OK)
   assert isfile(fileName) and access(fileName, R_OK), \
          "File {0} doesn't exist or isn't readable".format(fileName)
 
-  suiteParams = json.load(open(fileName, "r"))
+  fp = open(fileName, "r")
+  suiteParams = json.load(fp)
+  fp.close()
 
   # Suites to add to dictionary.
-  suites = ['u-bh443', 'u-bh519']
+  suites = ['bl049', 'bl624', 'bl625', 'bl630', 'bl642', 'bl629', 'bl643', 'bl482', 'bl593', 'bl898', 'bk398', 'bl181', 'bk547', 'bl179', 'bl306', 'bm057', 'bm056', 'bk684', 'bm058']
+    
   
   # Process each one.  If it's not there, add it.
-  for suite in suites:
+  for id in suites:
+    suite = 'u-' + id
     if suite not in suiteParams:
+      print "Adding ", suite
       suiteParams[suite] = [getparam(suite, "owner"), getparam(suite, "title")]
 
-  json.dump(suiteParams, open("suiteParams2.txt", "w"))
+  json.dump(suiteParams, open(fileName, "w"))
 
 if __name__ == '__main__':
   main()
