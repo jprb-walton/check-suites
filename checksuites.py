@@ -10,7 +10,6 @@ def main():
 
   # Read dictionary of suites and parameters from file.
   fileName = "suiteParams.txt"
-  print fileName, isfile(fileName), access(fileName, R_OK)
   assert isfile(fileName) and access(fileName, R_OK), \
          "File {0} doesn't exist or isn't readable".format(fileName)
 
@@ -20,8 +19,8 @@ def main():
   nodesTotal = 0
   print "User     Nodes             Task                Queued? Owner            Suite title"
   for line in sys.stdin:
-    # Emsure that the line contains the details about a job (starts with xxxxxx.xcs00).
-    if ".xcs" not in line:
+    # Emsure that the line contains the details about a job (starts with xxxxxx.xc{s,e,f}00).
+    if ".xc" not in line:
       continue
     
     # Extract the number of nodes and jobname (of the form foo.bar.suite).
